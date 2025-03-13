@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+    <link rel="stylesheet" href="position.css">
+</head>
+<body>
+    <h1>Les Positions</h1>
+    <p>La propriété css position permet de controler le positionnement d'un element dans le flux de la page.</p>
+
+    
+    <h2>position : static;</h2>
+    <p>La position par defaut de tout element html, positionné dans le flux de la page</p>
+
+
+    <h2>position: relative;</h2>
+    <p>L'élément est placé dans le flux normal puis déplacé par rapport a son emplacement d'origine, pour cela nous utilisons top, right, left, bottom</p>
+
+    <div class="relative">Element en relative</div>
+
+    
+    <h2>Position : absolute;</h2>
+    <p>L'élément est retiré du flux normal et positionné par rapport à son parent positionné (relative, absolute, fixed ou en sticky) le plus proche, si aucun parent n'est positionné, il se placera par rapport à l'élément html</p>
+
+    <div class="absolute">Element en absolute</div>
+
+    
+    <h3>Absolute dans un parent positionné</h3>
+
+    <div class="parent-relative">
+        <div class="enfant-absolute">X</div>
+        <h4>Depassement de contenu</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam aspernatur iusto quos harum perferendis amet molestiae. Rerum minus expedita vitae numquam ea, laudantium fugiat ut eum ipsam rem, velit aut!</p>
+    </div>
+
+    <h2>Position: fixed;</h2>
+    <p>Retiré du flux normal, l'element se positionne par rapport aux contours du navigateur, lors du scroll cet element reste fixé sur cet emplacement</p>
+
+    <header class="fixed">Entete fixe</header>
+
+    <div class="fixed2">
+        <a href="#">retour</a>
+    </div>
+
+    <h2>Position : sticky;</h2>
+
+    <div class="sticky">Contenu collant</div>
+
+    <div class="espace">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi debitis neque commodi quibusdam exercitationem voluptas illo excepturi sint ex perferendis animi cumque rerum corrupti tenetur, officia, saepe nihil, assumenda quos?
+        A, vero doloribus? Commodi placeat distinctio rerum fugiat numquam adipisci eos dolorum, excepturi vero eaque quibusdam, dolores, qui nihil obcaecati delectus officia quisquam alias tempora accusamus perspiciatis iste cum. Quis!
+        Autem dolores corporis velit aperiam omnis repellendus molestias error quam commodi modi harum hic dolor rerum delectus laudantium, sed, consectetur optio. Eos, veniam quas obcaecati accusantium quidem vero iusto sequi?
+    </div>
+
+</body>
+</html>

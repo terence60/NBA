@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <link rel="stylesheet" href="display.css">
+</head>
+<body>
+    <h1>Display CSS</h1>
+    <p>La propriété display en css determine comment un élément html doit etre affiché.</p>
+
+    <h2>Display block</h2>
+
+    <p>L'element est affiché comme un bloc. Il occupe par defaut toute la largeur de son parent. Il repousse tout ce qui precede au dessus, tout ce qui suit en dessous. L'element block peut etre dimensionné (width et height)</p>
+
+    <!-- div.block${Bloc $}*2 -->
+    <div class="block1">Bloc 1</div>
+    <div class="block2">Bloc 2</div>
+
+    <h2>Display: inline</h2>
+    
+    <p>L'element est <cite>affiché</cite> en ligne, il n'occupe que l'espace <span>necessaire</span> à son contenu <strong>et ne peut pas</strong> etre dimensionné.</p>
+    
+    <!-- span.inline${Inline $}*2 -->
+    <span class="inline1">Inline 1</span>
+    <span class="inline2">Inline 2</span>
+
+    <h2>Display: inline-block</h2>
+    <p>l'element inline-block peut etre dimensionné comme un block, et se placer sur une meme ligne comme le inline</p>
+
+    <div class="inline-block1">Inline-block 1</div>
+    <div class="inline-block2">Inline-block 2</div>
+
+    <nav>
+        <ul>
+            <li>Accueil</li>
+            <li>présentation</li>
+            <li>contact</li>
+        </ul>
+    </nav>
+
+
+    <h2>Display none</h2>
+
+    <div class="none">Display: none</div>
+
+    <button id="on">Click</button>
+
+    <script>
+        document.querySelector('#on').onclick = function(){
+            document.querySelector('.none').style.display = "block";
+        };
+    </script>
+
+    <h2>Calcul de la taille de boite (box-sizing)</h2>
+
+    <p>Par defaut la taille d'un element block est définie par son content (width & height) plus sa marge interieure (padding) plus sa border</p>
+
+    <div class="boite1">boite 1</div>
+
+    <p>on peut changer cette methode de clacul en incluant dans le content : le padding et le border : box-sizing: border-box</p>
+
+    <div class="boite2">boite 2</div>
+
+</body>
+</html>

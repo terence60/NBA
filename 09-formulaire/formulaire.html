@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        form{
+            border: 2px solid;
+            padding: 20px;
+        }
+        /* les labels passent block pour préceder les inputs */
+        label.block{
+            display: block;
+        }
+
+        textarea{
+            height: 200px;
+            width: 500px;
+            /* resize permet de parametrer la poignée de redimentionement 
+            vertical / horizontal / none */
+            resize: none;
+        }
+
+        /* on peut selectionner un element en fonction d'un de ses attributs (on utilise les []) */
+        input[type=text], input[type=password], input[type=number], input[type=date], input[type=password],input[type=email],input[type=submit]{
+            width: 200px;
+        }
+        select{
+            width: 200px;
+        }
+
+        /* exemple de mise en page */
+        #monForm{
+            display:flex;
+            flex-wrap: wrap;
+            border: 2px solid;
+            width: 500px;
+        }
+        #monForm .col1{
+            width: 50%;
+            text-align: right;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            background-color: bisque;
+        }
+        #monForm .col2{
+            width: 50%;
+            text-align: left;
+            padding-bottom: 20px;
+            background-color: rgb(199, 164, 120);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- tout formulaire doit etre inclu dans un element <form> -->
+
+        <!-- action : determine le chemin du fichier vers lequel nous envoyer lors de la validation du formulaire
+        method determine la methode d'envoi de l'information 
+            - get : envoie l'info dans l'url : c'est très peu sécurisé
+            - post : ca envoi directement au serveur de manière securisée sans apparaitre dans l'url
+    -->
+        <form action="" method="get" title="infobulle">
+            <p>
+                <!-- le label est l'etiquette du champ correspondant, nous relions son attribut for, à l'id du champ concerné -->
+                <label for="id-prenom" class="block">Prénom</label>
+                <!-- l'element input type text est un champ de saisie sur une ligne. Son attribut id permet de relier son label. son attribut name permet de nommer le champ en vue de recuperer la valeur tapée pour la traiter -->
+                <!-- placeholder permet de placer du contenu temporaire dans le champs -->
+                <!-- si cet element doit obligatoirement etre renseigné : attribut required -->
+                <input type="text" name="prenom" id="id-prenom" placeholder="Votre prénom..." required>
+            </p>
+            <p>
+                <label for="id-mdp" class="block">Mot de passe</label>
+                <!-- il est possible de limiter en html le nbre de caractères : minlength et maxlength -->
+                <input type="password" name="mdp" id="id-mdp" minlength="4" maxlength="8">
+            </p>
+            <p>
+                <label for="id-code-postal" class="block">Code postal</label>
+                <!-- valeurs minimales min="", maximales : max="" -->
+                <input type="number" name="code-postal" id="id-code-postal" min="0" max="99999">
+            </p>
+            <p>
+                <label for="id-email" class="block">Email</label>
+                <input type="email" name="email" id="id-email">
+            </p>
+            <p>
+                <label for="id-date" class="block">Date d'arrivée</label>
+                <input type="date" name="date" id="id-date">
+            </p>
+            <p>
+                <label for="id-pays" class="block">Pays</label>
+                <!-- required rend la selection d'un select obligatoire -->
+                <select name="pays" id="id-pays" required>
+                    <!-- disabled desactive la premiere option -->
+                    <!-- selected la selectionne par defaut -->
+                    <option value="" disabled selected>Votre pays</option>
+                    <option value="fr">France</option>
+                    <option value="it">Italie</option>
+                    <option value="es">Espagne</option>
+                </select>
+            </p>
+            <p>
+                <label for="id-ville" class="block">Ville</label>
+                <input type="text" name="ville" id="id-ville" list="liste-ville">
+                <datalist id="liste-ville">
+                    <option value="Paris"></option>
+                    <option value="Lyon"></option>
+                    <option value="Marseille"></option>
+                    <option value="Lille"></option>
+                    <option value="Nice"></option>
+                </datalist>
+            </p>
+            <p>
+                <label class="block">votre genre</label>
+                <!-- checked permet de selectionner l'un des bouton par defaut -->
+                <input type="radio" name="genre" value="f" id="id-f" checked>
+                <label for="id-f">Femme</label>
+                <input type="radio" name="genre" value="h" id="id-h">
+                <label for="id-h">Homme</label>
+                <input type="radio" name="genre" value="ng" id="id-ng">
+                <label for="id-ng">Non genré</label>
+            </p>
+            <p>
+                <label class="block">Langues parlées</label>
+                <input type="checkbox" name="langue" id="id-en" value="en">
+                <label for="id-en">Anglais</label>
+                <input type="checkbox" name="langue" id="id-es" value="es">
+                <label for="id-es">Espagnol</label>
+                <input type="checkbox" name="langue" id="id-it" value="it">
+                <label for="id-it">Italien</label>
+            </p>
+            
+            <p>
+                <input type="checkbox" name="conditions" id="id-conditions" value="on" required>
+                <label for="id-conditions">conditions</label>
+            </p>
+            <p>
+                <label for="id-msg" class="block">Message</label>
+                <textarea name="msg" id="id-msg" cols="10" rows="10"></textarea>
+            </p>
+            <p>
+                <!-- je peux changer le contenu du bouton en changeant sa value -->
+                <input type="submit" name="submit" value="Valider">
+            </p>
+        </form>
+
+
+        <form id="monForm" action="#" method="post">
+            <div class="col1">
+                <label for="">Mon label</label>
+            </div>
+            <div class="col2">
+                <input type="text">
+            </div>
+            <div class="col1">
+                <label for="">Mon petit label</label>
+            </div>
+            <div class="col2">
+                <input type="text">
+            </div>
+            <div class="col1">
+                <label for="">Mon tres tres grand label</label>
+            </div>
+            <div class="col2">
+                <input type="text">
+            </div>
+        </form>
+</body>
+</html>

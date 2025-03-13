@@ -1,0 +1,49 @@
+<!-- commentaire html ctrl + : -->
+ <!-- le doctype est la signature du document html, il indique aux navigateurs la version utilisée -->
+ <!DOCTYPE html>
+ <!-- html est l'element racine qui contient l'ensemble du code de la page -->
+ <html lang="fr">
+ <!-- head contient les informations necessaires à la page en dehors de l'affichage (liens vers le css, metadonnées) -->
+ <head>
+     <!-- le choix d'encodage de caractères -->
+     <meta charset="UTF-8">
+     <!-- balise necessaire au bon fonctionnement du responsive -->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- titre de la page -->
+     <title>Structure</title>
+     <!-- description de la page -->
+      <meta name="description" content="La description de ma page">
+
+    <!-- Il existe 3 methodes pour charger du css dans un fichier html -->
+
+      <!-- METHODE 1 lien de chargement du css -->
+       <link rel="stylesheet" href="structure.css">
+
+       <!-- METHODE 2 : element style dans le head -->
+        <style>
+            /* ici c'est du css */
+            main{
+                /* contours : necessite 2 infos au minimum taille / style */
+                border: 1px solid red;
+                color: orange;
+            }
+        </style>
+ </head>
+ <!-- METHODE 3 : un attribut style directement dans la balise concernée -->
+ <body style="margin: 10px;">
+     <header>
+        Entete de la page
+     </header>
+     <!-- creer une balise nav contenant le texte : MENU -->
+      <nav>Menu</nav>
+      <!-- creer un element main avec le texte 'contenu' 
+       puis un element footer : 'pied de page' -->
+
+       <main>
+        Contenu
+       </main>
+       <footer>Pied</footer>
+
+       <article>Mon article</article>
+ </body>
+ </html>

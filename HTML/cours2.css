@@ -1,0 +1,40 @@
+cherchez la propriété css permettant de souligner le texte et appliquez le sur body
+
+stylisez le main couleur de fond white, hauteur 500px;
+
+enfin stylisez le footer pour une apparence similaire au header */
+body{
+    background-color: lightgrey;
+    text-decoration: underline;
+    /* couleur de texte */
+    color: white;
+}
+main{
+    background-color: white;
+    height: 500px;
+    color: grey;
+}
+
+/* marges
+Il existe des marges exterieures a la boite (margin) et d'autres marges intérieures à la boite (padding)
+
+*/
+article{
+    background-color: orange;
+    /* il existe 4 propriétés de margin pour choisir l'axe ou appliquer les marges
+    margin-top, margin-right, margin-left, margin-bottom
+
+    La propriété raccourcie margin permet de remplacer ces 4 axes: 
+
+    1 valeur : les 4  cotés
+    2 valeurs haut-bas / gauche-droite
+    3 valeurs haut / gauche-droite / bas
+    4 valeurs haut / droite / bas / gauche
+    */
+    margin: 50px 40px 30px 20px;
+    padding: 20px;
+    /* contour
+    border-width / border-style / border-color
+    */
+    border: 2px solid red;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liens hypertextes</title>
+    <link rel="stylesheet" href="lien.css">
+</head>
+<body>
+        <h1>Liens hypertextes</h1>
+
+        <p>
+            Lien vers une page en local :
+            <a href="../05-image/image.html">Vers image.html</a>
+        </p>
+        <p>
+            Lien vers un site externe dans un nouvel onglet ou fenetre
+            <a href="https://nextformation.com" target="_blank" title="Vers nextformation">Vers nextformation</a>
+        </p>
+
+        <p>
+            Lien vers display
+            <a href="../04-maquette/display.html">
+                <img src="../00-partage/liens/etoile.png" alt="vers display">
+            </a>
+        </p>
+        <p>titre cliquable (on ne met pas de bloc dans un inline)
+            <h3>
+                <a href="">Titre</a>
+            </h3>
+        </p>
+
+        <p>
+            Lien vers pdf (que le navigateur sait ouvrir)
+            <a href="../00-partage/liens/cv.pdf">pdf</a>
+        </p>
+
+        <p>
+            Lien vers un doc (que le navigateur ne sait pas ouvrir)
+            <a href="../00-partage/liens/cv.doc">doc</a>
+        </p>
+
+        <h2>
+            Style des liens
+        </h2>
+        <div>
+            <a href="#">Lien stylisé</a>
+        </div>
+
+        <h2>Menu de navigation</h2>
+
+        <nav id="menu">
+            <!-- ul de premier niveau -->
+             <ul>
+                <li>
+                    <a href="#">Accueil</a>
+                </li>
+                <li>
+                    <a href="#">Présentation</a>
+                    <ul>
+                        <li>
+                             <a href="#">Parcours</a>
+                        </li> 
+                        <li>
+                             <a href="#">Compétences</a>
+                        </li> 
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Réalisation</a>
+                    <!-- ul de second niveau -->
+                    <ul>
+                       <li>
+                            <a href="#">html</a>
+                       </li> 
+                       <li>
+                            <a href="#">css</a>
+                       </li> 
+                       <li>
+                            <a href="#">javascript</a>
+                       </li> 
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+             </ul>
+        </nav>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio animi ex magnam exercitationem, officia laborum, error, unde maiores recusandae expedita veritatis. Eius quod quasi quisquam, illo totam eos ipsum possimus.
+        Provident quasi nobis totam, ab debitis velit, quia numquam minima nam excepturi fugit, ut magni aut voluptatem veniam eos repellendus ipsam! Libero numquam officiis quidem nesciunt, exercitationem tempore natus at.
+        Quas similique laboriosam temporibus ducimus sapiente. Dicta voluptas aliquam sapiente nulla sequi amet fuga omnis culpa autem vel nihil excepturi ducimus rem facilis ullam eius, inventore fugit voluptatum esse? Porro?</p>
+</body>
+</html>

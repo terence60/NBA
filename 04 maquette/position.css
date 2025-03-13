@@ -1,0 +1,121 @@
+/* positionnement statique */
+body{
+    position: static;
+}
+
+/* positionnement relative */
+
+.relative{
+    width: 150px;
+    height: 150px;
+    background: orange;
+    position: relative;
+    bottom: 50px;
+    left: 40px;
+    /* z-index permet de définir la profondeur (axe z) */
+    z-index: -10;
+}
+
+/* Positionnement absolute */
+.absolute{
+    width: 150px;
+    height: 350px;
+    background: tomato;
+    position: absolute;
+    /* je le place à 0 px du haut de la page */
+    top: 0;
+    left: -140px;
+    /* transition pour animer le changement de left et de couleur*/
+    transition: left .5s ease, background-color 3s;
+}
+
+.absolute:hover{
+    left: 0;
+    background: purple;
+}
+
+/* parent positionné avec enfant absolute */
+
+.parent-relative{
+    width: 300px;
+    height: 300px;
+    border: 2px solid red;
+    margin: 20px auto;
+    position: relative;
+    /* gestion du depassement de contenu 
+    visible defaut
+    hidden
+    scroll
+    */
+    overflow-y: scroll;
+}
+.enfant-absolute{
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    text-align: center;
+    line-height: 40px;
+    /* border-radius: 20px; */
+}
+.parent-relative p{
+    font-size: 27px;
+}
+
+
+/* element fixed */
+
+.fixed{
+    background: rgba(0,0,0,.5);
+    color: white;
+    padding: 30px;
+    position: fixed;
+    /* il faut tout de suite lui indiquer des coordonnées */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* lorsqu'on place un header fixed il faut compenser l'espace en haut de page */
+body{
+    margin-top: 100px;
+}
+
+
+/* selectionner fixed2, lui appliquer une couleur de fond et un border-radius pour en faire un cercle, le fixer à 40px du bas de la page, et 40px de la droite */
+
+.fixed2{
+    background-color: dodgerblue;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 30px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 15;
+}
+
+/* Positionnement sticky */
+
+.sticky{
+    background-color: skyblue;
+    padding: 30px;
+    position: sticky;
+    top: 80px;
+    z-index: 5;
+}
+.espace{
+    height: 1000px;
+    border: 1px solid;
+}
+
+h4{
+    position: sticky;
+    top: 0;
+    background: dodgerblue;
+    padding: 5px;
+}

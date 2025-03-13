@@ -1,0 +1,121 @@
+/* Les images en css : background-image */
+
+body{
+    /* background-color: #204d20; */
+    /* background-image: url('../00-partage/images/fond1.jpg'); */
+    /* largeur de l'image puis hauteur 
+    px, %, auto, cover
+    */
+    /* background-size: cover ; */
+    /* repetition 
+    repeat, no-repeat, repeat-y, repeat-x*/
+    /* background-repeat: no-repeat; */
+    /* positionnement de l'image (valeur 1 :horizontal, valeur 2 : vertical)
+    px, %, center, top, right, bottom, left
+    */
+    /* background-position: center top; */
+
+    /* il existe une propriété raccourcie pour les propriétés background- 
+    le slash / determine a gauche le position, à droite la size
+    */
+    
+    background: #204d20 url('../00-partage/images/fond1.jpg') no-repeat 50% 0 / cover;
+
+}
+
+#conteneur{
+    min-height: 700px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, .5);
+    
+}
+.bg{
+    width: 300px;
+    height: 200px;
+    border: 2px solid blue;
+    background-image: url('../00-partage/images/image.jpg');
+}
+
+/* balise image */
+.eiffel{
+    width: 200px;
+}
+
+/* texte sur une image img */
+h4{
+    position: relative;
+    bottom: 270px;
+    left: 90px;
+}
+.plage{
+    width: 310px;
+}
+
+/* balise figure */
+*{
+    box-sizing: border-box;
+}
+
+figure{
+    border: 2px solid black;
+    width: 300px;
+    height: 215px;
+    position: relative;
+    overflow: hidden;
+    -webkit-box-shadow: 13px 8px 10px -10px rgba(0,0,0,0.27);
+    -moz-box-shadow: 13px 8px 10px -10px rgba(0,0,0,0.27);
+    box-shadow: 13px 8px 10px -10px rgba(0,0,0,0.27);
+}
+figure img{
+    display: block;
+    width: 100%;
+    transition: 1s;
+    filter: grayscale(80%);
+}
+figcaption{
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+    transition: .5s;
+}
+figure:hover figcaption{
+    bottom: 0;
+}
+figure:hover img{
+    transform: scale(1.2) rotate(0.01turn);
+    filter: grayscale(0%);
+}
+
+/* habillage */
+
+.habillage{
+    border: 2px solid;
+    padding: 10px;
+    font-size: 24px;
+    text-align: justify;
+}
+.habillage img{
+    width: 200px;
+    /* on rend l'image flottante pour l'envoyer en left ou right et permettre au texte de l'habiller */
+    float: left;
+    margin: 5px 10px 5px 0;
+}
+
+.habillage2{
+    border: 2px solid;
+    padding: 10px;
+    font-size: 24px;
+    text-align: justify;
+    display: flex;
+}
+.habillage2 img{
+    width: 200px;
+}

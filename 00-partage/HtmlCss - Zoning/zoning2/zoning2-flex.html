@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            color: white;
+        }
+        #conteneur{
+            width: 80%;
+            border: 2px solid grey;
+            margin: 0 auto;
+        }
+        #header{
+            background: #A4409A;
+            height: 80px;
+            display: flex;
+        }
+        #menu{
+            height: 30px;
+            background: gold;
+        }
+        #contenu{
+            height: 600px;
+            background: lightgrey;
+            display: flex;
+        }
+        #contenu span{
+            color: grey;
+            text-transform: uppercase;
+            font-size: 46px;
+        }
+        #principal{
+            background: red;
+            width: 75%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #colonne{
+            background: blue;
+            width: 25%;
+        }
+        #footer{
+            background: #E80B28;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="conteneur">
+        <header id="header">
+            <div id="logo">
+                <span>Logo</span>
+            </div>
+            <div id="banniere">
+                <span>Banniere</span>
+            </div>
+        </header>
+        <nav id="menu">
+            <span>Menu</span>
+        </nav>
+        <div id="contenu">
+            <main id="principal">
+                <div>Contenu1</div>
+            </main>
+            <aside id="colonne">
+                <span>b</span>
+            </aside>
+        </div>
+        <footer id="footer">
+            <span>Bas</span>
+        </footer>
+    </div>
+</body>
+</html>

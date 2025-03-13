@@ -1,0 +1,95 @@
+body{
+    background: rgb(240,240,240);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#conteneur{
+    margin: 40px auto;
+    width: 960px;
+    border: 2px solid rgb(150,150,150);
+}
+.flex{
+    display: flex;
+}
+
+/* HEADER */
+
+#header{
+    background-color: #254c63;
+}
+#logo{
+    width: 300px;
+    background: #6495ED;
+    height: 120px;
+    line-height: 120px;
+}
+#banniere{
+    width: 660px;
+    background: #3e65ae;
+    height: 120px;
+    line-height: 120px;
+}
+
+
+/* MENU */
+
+#menu{
+    line-height: 50px;
+}
+#menu div div{
+    background-color: #87CEFA;
+    flex: 1;
+    height: 50px;
+}
+#menu div div:nth-child(even){
+    background-color: #00BFFF;
+}
+
+
+/* CONTENU */
+
+#principal{
+    background-color: #fff;
+    font-weight: normal;
+}
+#colonne{
+    background-color: rgb(240,240,240);
+    color: rgb(150,150,150);
+    width: 300px;
+}
+#colonne div{
+    height: 100px;
+    line-height: 100px;
+    background-color: rgb(255,255,255);
+    border: 1px solid rgb(150,150,150);
+    margin: 20px;
+}
+#contenu{
+    background-color: rgb(240,240,240);
+    border: 1px solid rgb(150,150,150);
+    width: 660px;
+    margin: 20px;
+    color: rgb(150,150,150);
+}
+#contenu p{
+    margin: 40px 0;
+}
+
+/* FOOTER */
+
+#footer{
+    height: 80px;
+    line-height: 80px;
+}
+#footer div div{
+    background-color: #87CEFA;
+    height: 80px;
+    width: 25%;
+}
+
+#footer div div:nth-child(even){
+    background-color: #00BFFF;
+}

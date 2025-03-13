@@ -1,0 +1,179 @@
+/* le parent flex */
+#flex1{
+    height: 350px;
+    width: 80%;
+    border: 2px solid;
+    margin: 20px auto;
+    /* mise en place du flex */
+    display: flex;
+    /* choix de direction de l'axe principal
+    row par defaut
+    row-reverse
+    column
+    column-reverse
+    */
+    flex-direction: row;
+    /* alignement des blocs dans l'axe principal 
+    flex-start defaut
+    flex-end
+    center
+    space-between
+    space-around
+    space-evenly
+    */
+    justify-content: space-around;
+    /* alignement dans l'axe secondaire
+    flex-start defaut
+    flex-end
+    center
+    */
+    align-items: center;
+
+    /* propriété flex qui autorise le retour a la ligne des elements
+    nowrap defaut
+    wrap
+    */
+    flex-wrap: wrap;
+}
+
+
+/* les items flex */
+
+.item1{
+    background-color: red;
+    height: 100px;
+    /* propriété pour etablir un rapport de largeur */
+    /* flex: 1; */
+
+    width: 30%;
+    /* specifier un alignement dans l'axe secondaire à un seul item */
+    align-self: flex-start;
+}
+.item2{
+    background-color: gold;
+    height: 100px;
+    /* flex: 1; */
+    width: 30%;
+    /* changement d'ordre dans le flux flex */
+    order: 3;
+}
+.item3{
+    background-color: green;
+    height: 100px;
+    /* flex: 1; */
+    width: 30%;
+}
+
+
+
+/* EXERCICE */
+
+*{
+    box-sizing: border-box;
+}
+
+#conteneur{
+    width: 80%;
+    border: 2px solid grey;
+    margin: 0 auto;
+    color: white;
+}
+
+/* ************************ */
+/* *******EXERCICE A******** */
+/* ************************ */
+/* Placer l'id logo et l'id banniere de gauche a droite, respectivement à 25% et 75% */
+
+#header{
+    background: #A4409A;
+    height: 80px;
+    display: flex;
+}
+#logo{
+    background-color: grey;
+    flex: 1;
+    text-align: center;
+    line-height: 80px;
+}
+#banniere{
+    background-color: lightgrey;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ************************ */
+/* *******EXERCICE B******** */
+/* ************************ */
+/* Placer les enfants directs de #menu (#menu > *) cotes à cotes à la même taille */
+#menu{
+    min-height: 30px;
+    background: gold;
+    display: flex;
+}
+/* je selectionne tous les elements qui sont enfants directs de l'id menu */
+#menu div{
+    background-color: green;
+    border: 1px solid white;
+    padding: 0 5px;
+    flex: 1;
+}
+#menu div:nth-child(even){
+    background-color: rgb(3, 76, 3);
+}
+
+
+/* ************************ */
+/* *******EXERCICE C******** */
+/* ************************ */
+/* Placer les l'id principal et l'id colonne cote à cote à respectivement 75% et 25% de large */
+
+/* essayer de placer la div à l'interieur de l'id principal au centre verticalement et au centre horizontalement */
+
+#contenu{
+    height: 600px;
+    background: lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#principal{
+    background: red;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#colonne{
+    background: blue;
+    width: 25%;
+}
+#contenu span{
+    color: grey;
+    text-transform: uppercase;
+    font-size: 46px;
+}
+#footer{
+    background: #E80B28;
+    height: 50px;
+}
+
+
+
+@media screen and (max-width:800px){
+    
+    #conteneur{
+        width: 100%;
+    }
+    
+    #principal{
+        width: 100%;
+        order: 1;
+    }
+    #colonne{
+        width: 100%;
+        order: 2;
+    }
+}

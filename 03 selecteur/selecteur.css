@@ -1,0 +1,140 @@
+/* Selecteur universel */
+/* je selectionne tous les elements */
+*{
+    font-size: 20px;
+}
+
+/* selecteur par type */
+/* je vise l'element body */
+body{
+    background-color: ivory;
+}
+
+/* je vise tous les h2 */
+h2{
+    font-family: lobster
+}
+
+/* on peut cumuler les selecteurs */
+h1, h2{
+    text-decoration: underline;
+}
+
+
+/* les identifiants id */
+/* ils visent un element préci déterminé dans le html */
+/* les id sont representés par le diese # */
+#conteneur{
+    width: 85%;
+    margin: 20px auto;
+    border: 2px solid grey;
+}
+
+/* donner un identifiant à chaque section pour une couleur de fond differente a ces sections */
+
+#ingredients{
+   background-color: lightcyan;
+}
+#preparation{
+    background-color: lightseagreen;
+}
+
+/* Selecteur par classes */
+/* c'est un attribut html que l'on donne à un ou plusieurs elements 
+la classe est symbolisée par le point*/
+
+.contour{
+  border: 2px solid lightgrey; 
+  padding: 20px; 
+  margin: 20px;
+}
+
+/* creer une classe 'soulignement' et souligner (text-decoration : underline;) chaque premier li des deux listes plus le paragraphe dans le footer */
+
+.soulignement{
+    text-decoration: underline;
+}
+
+
+/* selecteurs descendants (selectionner un element en fonction de son parent) c'est l'espace qui determine a gauche le parent, à droite l'enfant visé */
+
+/* je vise les li à l'interieur d'un ol */
+ol li{
+    color: white;
+}
+
+/* mettre en majuscule (text-transform: uppercase;)
+le paragraphe à l'interieur du footer */
+footer p{
+    text-transform: uppercase;
+}
+
+/* changer la couleur du h2 préparation pour du blanc */
+
+#preparation h2{
+    color: white;
+}
+
+
+/* je peux selectionner un element en fonction de son type (nom de balise) ET de sa classe */
+
+li.soulignement{
+    color: red;
+}
+
+/* pseudo selecteurs */
+
+/* Selectionner des elements en fonction de leurs états
+ */
+
+ /* le premier des li dans la liste ordonnée */
+ol li:first-child{
+    background-color: orange;
+}
+
+/* le dernier */
+ol li:last-child{
+    background-color: tomato;
+}
+
+/* une occurence : ici le 3eme li */
+ol li:nth-child(3){
+    background-color: lightgreen;
+}
+
+/* les li pairs de ma liste non ordonnée */
+ul li:nth-child(even){
+    background-color: lightblue;
+}
+/* les li impairs de ma liste non ordonnée */
+ul li:nth-child(odd){
+    background-color: lightgrey;
+}
+
+/* au moment du survol */
+h1:hover{
+    background-color: lightpink;
+}
+
+
+/* priorité des selecteurs */
+
+/* dans le cas ou nous proposons deux valeurs différentes a un même élément, et un selecteur identique, c'est la derniere regle qui s'impose */
+
+#conteneur section#preparation h3{
+    color: white;
+}
+/* Cette regle ne s'applique pas car le poid du selecteur n'est pas assez important */
+h3{
+    color: blue;
+}
+
+/* ici le drapeau !important impose la valeur quel que soit le poids du selecteur (a utiliser avec soin) */
+h3{
+    color: blue !important;
+}
+/* 
+- un id pese 100
+- une classe ou un pseudo selecteur pese 10
+- un element pese 1
+*/

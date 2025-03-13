@@ -1,0 +1,159 @@
+/* **************************** */
+/* **** REGLAGES GLOBAUX **** */
+/* **************************** */
+*{
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin-top: 100px;
+}
+
+
+/* GRILLE */
+
+.conteneur{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid;
+}
+.conteneur-large{
+    width: 100%;
+    margin: 0 auto;
+    border: 2px solid red;
+}
+.ligne{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-100{
+    width: 100%;
+}
+.col-75{
+    width: 75%;
+}
+.col-50{
+    width: 50%;
+}
+.col-66{
+    width: 66.666666%;
+}
+.col-33{
+    width: 33.333333%;
+}
+.col-25{
+    width: 25%;
+}
+
+
+/* colonne de base 12 */
+.col-1{
+    width: 8.333333%;
+}
+.col-2{
+    width: 16.666666%;
+}
+.col-3{
+    width: 25%;
+}
+.col-4{
+    width: 33.333333%;
+}
+.col-5{
+    width: 41.666666%;
+}
+.col-6{
+    width: 50%;
+}
+.col-7{
+    width: 58.333333%;
+}
+.col-8{
+    width: 66.666666%;
+}
+.col-9{
+    width: 75%;
+}
+.col-10{
+    width: 83.333333%;
+}
+.col-11{
+    width: 91.666666%;
+}
+.col-12{
+    width: 100%;
+}
+
+.rouge{ background: red;}
+.bleu{ background: blue;}
+.vert{ background: green;}
+.orange{ background: orange;}
+.tomate{ background: tomato;}
+
+/* **************************** */
+/* **** HEADER **** */
+/* **************************** */
+#header{
+    background: lightgrey;
+    min-height: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#menu ul{
+    list-style: none;
+    display: flex;
+}
+
+/* reglages de cibles */
+#cible1, #cible2, #cible3, #cible4{
+    position: relative;
+    bottom: 100px;
+    z-index: -100;
+}
+
+/* **************************** */
+/* **** SECTION 1 **** */
+/* **************************** */
+#section1{
+    background: lightcyan;
+    min-height: 500px;
+}
+
+
+/* **************************** */
+/* **** SECTION 2 **** */
+/* **************************** */
+#section2{
+    background: lightpink;
+    min-height: 500px;
+}
+
+
+/* **************************** */
+/* **** SECTION 3 **** */
+/* **************************** */
+#section3{
+    background: lightgreen;
+    min-height: 500px;
+}
+
+
+/* **************************** */
+/* **** SECTION 4 **** */
+/* **************************** */
+#section4{
+    background: lightyellow;
+    min-height: 800px;
+}
+
+
+/* **************************** */
+/* **** FOOTER **** */
+/* **************************** */
+#footer{
+    background: lightgrey;
+    min-height: 60px;
+}

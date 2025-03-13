@@ -1,0 +1,63 @@
+/* style des liens */
+
+/* dans le but de garder la logique de priorité css, preserver cet ordre est important si on veut designer chaque etat, en revanche dans la majorité des site on preferera designer le lien globalement + son etat de survol */
+
+/* Lien non visité */
+div a{
+    color: dodgerblue;
+    text-decoration: none;
+}
+/* lien visité */
+div a:visited{
+    color: blue;
+}
+/* lien survolé */
+div a:hover{
+    color: purple;
+    text-decoration: underline;
+}
+/* en train d'etre cliqué */
+div a:active{
+    color: tomato;
+}
+
+
+/* menu de navigation */
+
+#menu{
+    margin: 50px 0;
+}
+#menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#menu li a{
+    padding: 10px 20px; 
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    font-family: arial;
+    transition: .3s;
+}
+#menu li a:hover{
+    background-color: fuchsia;
+}
+/* je vise le ul de premier niveau */
+#menu > ul{
+    display: flex;
+}
+/* je rend invisible le ul de second niveau */
+#menu li ul {
+    display: none;
+    position: absolute;
+    padding-right: 10px;
+}
+#menu a{
+    box-sizing: border-box;
+    display: block;
+}
+/* je rend visible le ul de second niveau lorsque je survole son li */
+#menu li:hover ul{
+    display: block;
+}

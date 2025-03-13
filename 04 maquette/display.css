@@ -1,0 +1,88 @@
+/* display block */
+
+.block1{
+    background-color: orange;
+    height: 50px;
+    width: 40%;
+    display: block;
+}
+.block2{
+    background-color: tomato;
+    height: 50px;
+    width: 40%;
+    display: block;
+}
+
+/* display inline */
+.inline1{
+    background-color: orange;
+    height: 50px;
+    width: 40%;
+    display: inline;
+}
+.inline2{
+    background-color: tomato;
+    height: 50px;
+    width: 40%;
+    display: inline;
+}
+/* display inline-block */
+.inline-block1{
+    background-color: orange;
+    height: 50px;
+    width: 40%;
+    display: inline-block;
+}
+.inline-block2{
+    background-color: tomato;
+    height: 50px;
+    width: 40%;
+    display: inline-block;
+}
+
+ul{
+    padding: 0;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    border: 1px solid;
+    width: 100px;
+    text-align: center;
+}
+
+/* display none */
+.none{
+    background-color: orange;
+    height: 50px;
+    width: 40%;
+    display: none;
+}
+
+/* Calcul de modele de boite */
+
+.boite1{
+    width: 50%;
+    height: 100px;
+    background-color: blueviolet;
+    padding: 50px;
+    border: 10px solid;
+    /* box-sizing */
+    box-sizing: content-box;
+}
+.boite2{
+    width: 50%;
+    height: 100px;
+    background-color: rgb(193, 168, 217);
+    padding: 10px;
+    border: 10px solid;
+    box-sizing: border-box;
+}
+
+/* dans l'immense majorité des cas on preferera utiliser le border-box quel que soit l'element */
+
+*{
+    box-sizing: border-box;
+}
+
+

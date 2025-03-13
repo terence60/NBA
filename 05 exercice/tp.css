@@ -1,0 +1,97 @@
+body{
+    background: rgb(200,200,200);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#conteneur{
+    margin: 40px auto;
+    width: 960px;
+    border: 2px solid white;
+}
+.conteneur{
+    width: 80%;
+    margin: 0 auto;
+    background-color: aqua;
+    min-height: 80px;
+}
+
+.flex{
+    display: flex;
+}
+
+/* HEADER */
+
+#header{
+    background-color:#228B22 ;
+}
+#logo{
+    width: 300px;
+    background:#3CB371;
+    height: 120px;
+    line-height: 120px;
+}
+
+/* MENU */
+
+#menu{
+    line-height: 50px;
+}
+#menu div div{
+    background-color: #32CD32;
+    flex: 1;
+    height: 50px;
+}
+#menu div div:nth-child(even){
+    background-color:#9ACD32 ;
+}
+
+
+/* CONTENU */
+
+#principal{
+    background-color: #fff;
+    font-weight: normal;
+}
+#block{
+    background-color: rgb(200,200,200);
+    color:white;
+    width: 60px;
+
+}
+#block div{
+    height: 100px;
+    line-height: 50px;
+background-color:rgb(200,200,200)
+border 1px solid rgb(200,200,200)
+margin 20px;
+}
+
+#contenu{
+    background-color: rgb(200,200,200);
+    border: 1px solid rgb(200,200,200);
+    width: 660px;
+    margin: 20px;
+    color: grey
+}
+#contenu p{
+    margin: 40px 0;
+}
+
+/* FOOTER */
+
+#footer{
+    height: 80px;
+    line-height: 80px;
+}
+#footer div div{
+    background-color: #32CD32;
+    height: 80px;
+    width: 25%;
+}
+
+#footer div div:nth-child(even){
+    background-color:#9ACD32;
+}

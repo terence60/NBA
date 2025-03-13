@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <link rel="stylesheet" href="flex.css">
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <p>Par defaut mes éléments de structure en html sont display block, ils ne permettent pas de creer la maquette que nous souhaitons en terme de colonnes (elements cotes a cotes).<br> Le flexbox est la technologie permettant de manipuler ces blocs selon les besoins. Il ajoute egalement des possibilités en terme de responsive web design.<br>
+        Idéee à retenir : le display: flex; se place sur le parent des elements que je veux manipuler. Lorsque le parent est flex, son contenu direct (les colonnes) deviennent des items flex, et deviennent manipulables.</p>
+
+        <!-- div#flex1>div.item${item flex $}*3 -->
+        <div id="flex1">
+            <div class="item1">item flex 1</div>
+            <div class="item2">item flex 2</div>
+            <div class="item3">item flex 3</div>
+        </div>
+</body>
+</html>
+<hr>
+
+<h2>Exercice</h2>
+
+
+<div id="conteneur">
+<header id="header">
+    <div id="logo">
+        <span>Logo</span>
+    </div>
+    <div id="banniere">
+        <span>Banniere</span>
+    </div>
+</header>
+<nav id="menu">
+    <div>Menu 1</div>
+    <div>Menu 2</div>
+    <div>Menu 3</div>
+    <div>Menu 4</div>
+</nav>
+<div id="contenu">
+    <main id="principal">
+        <div>Contenu1</div>
+    </main>
+    <aside id="colonne">
+        <span>b</span>
+    </aside>
+</div>
+<footer id="footer">
+    <span>Bas</span>
+</footer>
+</div>
+</body>
+</html>
