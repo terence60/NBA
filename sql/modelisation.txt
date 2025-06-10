@@ -1,0 +1,36 @@
+-- LEFT JOIN  : Tous les éléments de gauche, même sans association 
+-- RIGHT JOIN  : Tous les éléments de droite, même sans association
+
+-- LEFT JOIN, on dit : "Je garde toutes les lignes de la tables à gauche" 
+-- RIGHT JOIN, on dit : "Je garde toutes les lignes de la tables à droite" 
+
+FROM TABLE_A
+LEFT JOIN TABLE_B ...
+-- je garde tous les enregistrements de TABLES_A
+
+FROM TABLE_A
+RIGHT JOIN TABLE_B ...
+-- Je garde tous les enregistrments de TABLES_B
+
+Exemple 
+-- On fait un LEFT JOIN, pour garder tous les enregistrements du conducteur 
+
+SELECT prenom FROM conducteur c, association_vehicule_conducteur avc WHERE avc.id_conducteur = c.id_conducteur;
+
+
+SELECT prenom
+FROM conducteur c
+LEFT JOIN association_vehicule_conducteur avc 
+ON c.id_conducteur = avc.id_conducteur
+
+SELECT prenom
+FROM association_vehicule_conducteur avc  conducteur c
+RIGHT JOIN conducteur c
+ON c.id_conducteur = avc.id_conducteur
+
+SELECT prenom 
+FROM conducteur c, association_vehicule_conducteur avc 
+WHERE avc.id_conducteur = c.id_conducteur;
+
+FROM vehicule
+LEFT JOIN ....
