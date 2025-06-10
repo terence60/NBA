@@ -1,0 +1,94 @@
+------------------------------------------------------------------------------------------
+-- exercice : Qui conduit la voiture 503 ?
+SELECT prenom 
+FROM 
+conducteur, 
+association_vehicule_conducteur
+WHERE 
+association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+AND 
+association_vehicule_conducteur.id_vehicule=503;
+------------------------------------------------------------------------------------------
+-- exercice 2 : Qui conduit quoi ( MODELE , PRENOM )  ?
+SELECT c.prenom, v.modele
+FROM conducteur c, vehicule v, association_vehicule_conducteur avc
+WHERE c.id_conducteur = avc.id_conducteur
+AND v.id_vehicule = avc.id_vehicule
+
+------------------------------------------------------------------------------------------
+-- exercice 3 : Insérer un nouveau conducteur avec votre prenom et votre nom
+INSERT INTO conducteur (prenom,nom) VALUES ('Terence','dinguilu');
+
+INSERT INTO conducteur VALUES (NULL, 'Terence','dinguilu');
+
+----------------------------------------------------------------------------------------------
+-- 4 exercice : Afficher tous les conducteurs (meme ceux qui n'ont pas de correspondance) ainsi que les vehicules ( MODELE , PRENOM )
+SELECT v.modele, c.prenom
+FROM conducteur c
+LEFT JOIN association_vehicule_conducteur avc ON c.id_conducteur = avc.id_conducteur  
+LEFT JOIN vehicule v ON  v.id_vehicule = avc.id_vehicule       
+
+-- +--------+----------+
+-- | modele | prenom   |
+-- +--------+----------+
+-- | 807    | Julien   |
+-- | C8     | Morgane  |
+-- | Cls    | Philippe |
+-- | 807    | Philippe |
+-- | Touran | Amelie   |
+-- | NULL   | Alex     |
+-- +--------+----------+
+
+------------------------------------------------------------------------------------------------------
+---- 5 exercice : ajouter un nouveau vehicule : 
+Marque : Bugatti'
+Modele : 'EB 110', 
+couleur : 'gris', 
+immatriculation : 'BG-199-EB
+
+INSERT INTO vehicule VALUES (NULL, 'Bugatti', 'EB 110', 'gris', 'BG-199-EB')
+
+
+-- 6 exercice : Afficher les conducteurs et tous les vehicules (meme ceux qui n'ont pas de correspondance) ( MODELE , PRENOM )
+	SELECT v.modele, c.prenom FROM vehicule v
+	LEFT JOIN association_vehicule_conducteur avc ON v.id_vehicule = avc.id_vehicule
+	LEFT JOIN conducteur c ON c.id_conducteur = avc.id_conducteur;
+
+	-- +---------+--------+
+-- | modele  | prenom   |
+-- +---------+----------+
+-- | 807     | Julien   |
+-- | 807     | Philippe |
+-- | C8      | Morgane  |
+-- | Cls     | Philippe |
+-- | Touran  | Amelie   |
+-- | Octavia | NULL     |
+-- +---------+----------+
+
+--------------------------------------------------------------------------------
+--- exercie 7 : Affichez la voiture que vous conduisez
+
+SELECT v.*
+FROM vehicule v
+LEFT JOIN association_vehicule_conducteur avc ON v.id_vehicule = avc.id_vehicule
+LEFT JOIN conducteur c ON c.id_conducteur = avc.id_conducteur
+WHERE c.prenom = 'Terence'
+
+
+
+------------------------------------------------------------------------------------------
+-- exercice 8 : Afficher tous les conducteurs et tous les vehicules, peut importe les correspondances ( MODELE , PRENOM )
+
+-- PARTIE 1 : tous les conducteurs, même ceux sans véhicule.
+SELECT conducteur.prenom, vehicule.modele
+FROM conducteur
+LEFT JOIN association_vehicule_conducteur avc ON conducteur.id_conducteur = avc.id_conducteur
+LEFT JOIN vehicule ON vehicule.id_vehicule = avc.id_vehicule;
+
+UNION
+
+-- PARTIE 2 : Tous les véhicules, même ceux sans conducteur
+SELECT conducteur.prenom, vehicule.modele 
+FROM vehicule
+LEFT JOIN association_vehicule_conducteur ON vehicule.id_vehicule = association_vehicule_conducteur.id_vehicule
+LEFT JOIN conducteur ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+body{
+    background: url(./HTML5_logo_and_wordmark.svg.png)center/cover;
+    font-family: sans-serif;
+    min-height: 100vh;
+    }
+    main{
+        height: 500px;
+        background-color: rgba(127, 255, 212, 0.53);
+        width: 90%;
+        font-size: 1.5rem;
+        margin: 0 auto;
+        border: 2px solid blue;
+        border-radius: 20px;
+    }

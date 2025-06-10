@@ -1,0 +1,166 @@
+SELECT livres.titre, 
+	   auteurs.nom, 
+       livres.annee
+FROM livres,
+	 auteurs
+WHERE auteurs.nom LIKE "%a%"
+AND auteurs.id = livres.auteur_id;
+
+SELECT livres.titre, 
+	   auteurs.nom, 
+       livres.annee 
+FROM livres
+JOIN auteurs ON livres.auteur_id = auteurs.id
+WHERE auteurs.nom LIKE '%a%';
+
+-- Exercice 1
+-- Écrivez une requête qui sélectionne tous les livres de Victor Hugo OU Marcel Proust.
+
+SELECT livres.titre,
+	   auteurs.nom
+FROM livres
+JOIN auteurs ON livres.auteur_id = auteurs.id
+WHERE (auteurs.nom = 'victor hugo' OR auteurs.nom = 'Marcel Proust');
+
+
+SELECT livres.titre,
+	   auteurs.nom
+FROM livres,
+	 auteurs
+WHERE (auteurs.nom = 'victor hugo' OR auteurs.nom = 'Marcel Proust')
+AND auteurs.id = livres.auteur_id;
+
+
+
+-- Exercice 2
+-- Sélectionnez les livres qui ne sont PAS écrits par Albert Camus mais qui sont dans notre base de données.
+
+SELECT livres.titre,
+	   auteurs.nom
+FROM livres,
+	 auteurs
+WHERE (auteurs.nom <> 'Albert Camus')
+AND auteurs.id = livres.auteur_id;
+
+
+SELECT livres.titre,
+	   auteurs.nom
+FROM livres,
+	 auteurs
+WHERE (auteurs.nom NOT IN ('Albert Camus'))
+AND auteurs.id = livres.auteur_id;
+
+
+-- Livres par période
+-- Comptez combien de livres ont été publiés avant 1900 et combien après.
+
+SELECT 'Avant 1900' AS 'periode', 
+COUNT(*) AS 'nombre_livres'
+FROM livres
+WHERE annee < 1900
+UNION ALL
+SELECT 'Après 1900' AS 'periode', 
+COUNT(*) AS 'nombre_livres'
+FROM livres
+WHERE annee > 1900;
+
+-- Livres par auteur
+-- Comptez le nombre de livres publiés par chaque auteur, triés par ordre décroissant.
+
+SELECT 
+auteurs.nom,
+COUNT(*) AS 'NB_LIVRES' 
+FROM livres,
+	 auteurs
+WHERE livres.auteur_id = auteurs.id
+GROUP BY livres.auteur_id
+ORDER BY COUNT(*) DESC;
+
+
+-- 1 - Affiche tous les adhérents qui se sont inscrits après le 1er juin 2023.
+
+SELECT *
+FROM adherents
+WHERE date_inscription > '2023-06-01';
+
+-- 2 - Liste tous les livres publiés entre 1900 et 1999 inclus.
+
+SELECT *
+FROM livres
+WHERE annee BETWEEN 1900 AND 1999;
+
+SELECT *
+FROM livres
+WHERE annee >=1900 AND annee <=1999;
+
+-- 3 - Affiche l’année la plus ancienne de publication dans la table livres.
+
+SELECT MIN(annee)
+FROM livres;
+
+-- 4 - Sélectionne les livres qui ont été écrits par Victor Hugo ou Simone de Beauvoir (avec IN).
+ 
+SELECT livres.titre,
+	   auteurs.nom
+FROM auteurs,
+	 livres
+WHERE livres.auteur_id = auteurs.id
+AND auteurs.nom IN ('Victor Hugo','Simone de Beauvoir');
+
+
+-- 5 - Affiche tous les livres qui ne sont pas écrits par Albert Camus ni Marcel Proust (avec NOT IN).
+
+SELECT livres.titre,
+	   auteurs.nom
+FROM auteurs,
+	 livres
+WHERE livres.auteur_id = auteurs.id
+AND auteurs.nom NOT IN ('Marcel Proust','Albert Camus');
+
+-- 6 - Affiche les adhérents qui ont au moins un emprunt en mai 2023 (utilise une jointure + filtre sur date_emprunt).
+
+SELECT adherents.nom,
+       adherents.prenom,
+       emprunts.date_emprunt
+FROM adherents,
+     emprunts
+WHERE (emprunts.date_emprunt BETWEEN '2023-05-01' AND '2023-05-31')
+AND emprunts.adherent_id = adherents.id;
+
+
+-- 1 - Insérer un nouveau livre
+-- Ajoutez "Notre-Dame de Paris" de Victor Hugo (1831)
+
+INSERT INTO livres
+(titre, annee, auteur_id)
+VALUES ('Notre-Dame de Paris', 1831, 1)
+
+-- 2 - Mettre à jour un titre
+-- Corrigez l'année de publication des "Misérables" à 1865
+
+UPDATE livres 
+SET annee = 1865 
+WHERE LOWER(titre = 'les misérables');
+
+-- 3 - Supprimer un livre
+-- Supprimez le livre "Le Deuxième Sexe" de la table
+DELETE FROM emprunts WHERE livre_id =3;
+DELETE FROM livres WHERE titre LIKE "%exe%";
+
+-- 4 - Vérifier les changements
+-- Affichez la table pour confirmer vos modifications
+SELECT * FROM livres;
+
+
+
+-- Insertion avec sous-requete
+
+INSERT INTO livres 
+(titre, 
+ annee, 
+ auteur_id) 
+ VALUES 
+ ('Notre-Dame de Paris', 
+  1831, 
+  (SELECT id FROM auteurs WHERE nom = 'victor hugo')
+ );
